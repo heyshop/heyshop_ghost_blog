@@ -17,6 +17,7 @@ function labsFlag(key) {
 
 function getValidKeys() {
     var validKeys = {
+            storage: (config.storage && config.storage.provider) || 'local-file-store',
             fileStorage: {value: (config.fileStorage !== false), type: 'bool'},
             publicAPI: labsFlag('publicAPI'),
             apps: {value: (config.apps === true), type: 'bool'},
