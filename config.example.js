@@ -20,13 +20,41 @@ config = {
             },
             debug: false
         },
-
         server: {
             host: '127.0.0.1',
             port: '2368'
         }
     },
-
+    production: {
+        url: 'http://blog.heidianer.com',
+        mail: {},
+        database: {
+            client: 'mysql',
+            connection: {
+                host     : 'rdsyvryzamainqr.mysql.rds.aliyuncs.com',
+                user     : 'xxxxxx',
+                password : 'xxxxxx',
+                database : 'xxxxxx',
+                charset  : 'utf8'
+            },
+            debug: false
+        },
+        server: {
+            host: '127.0.0.1',
+            port: '6001'
+        },        
+        storage: {
+             provider: 'qiniu',
+             bucketname: 'xxxxxx',
+             ACCESS_KEY: 'xxxxxx',
+             SECRET_KEY: 'xxxxxx',
+             root: '/image/',
+             prefix: 'http://up.img.heidiancdn.com'
+        },
+        privacy: {
+            useGoogleFonts: false
+        }
+    },
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.

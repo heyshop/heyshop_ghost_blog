@@ -9,10 +9,8 @@ var errors = require('../errors'),
  */
 function getStorage(type) {
     type = type || 'images';
-
     var storageChoice = config.storage.active[type],
         storageConfig = config.storage[storageChoice];
-
     // CASE: type does not exist
     if (!storageChoice) {
         throw new errors.IncorrectUsage('No adapter found for type: ' + type);
@@ -22,7 +20,6 @@ function getStorage(type) {
     if (storage[storageChoice]) {
         return storage[storageChoice];
     }
-
     // CASE: load adapter from custom path  (.../content/storage)
     try {
         storage[storageChoice] = require(config.paths.storagePath.custom + storageChoice);
@@ -47,8 +44,7 @@ function getStorage(type) {
             throw new errors.IncorrectUsage(err.message);
         }
     }
-
-    storage[storageChoice] = new storage[storageChoice](storageConfig);
+    storage[storageChoice] = new storage[storageChoice]();
 
     if (!(storage[storageChoice] instanceof Base)) {
         throw new errors.IncorrectUsage('Your storage adapter does not inherit from the Storage Base.');
@@ -61,8 +57,8 @@ function getStorage(type) {
     if (_.xor(storage[storageChoice].requiredFns, Object.keys(_.pick(Object.getPrototypeOf(storage[storageChoice]), storage[storageChoice].requiredFns))).length) {
         throw new errors.IncorrectUsage('Your storage adapter does not provide the minimum required functions.');
     }
-
     return storage[storageChoice];
 }
 
 module.exports.getStorage = getStorage;
+

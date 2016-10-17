@@ -18,6 +18,24 @@ function fetchAvailableTimezones() {
     return timezones;
 }
 
+function getValidKeys() {
+    var validKeys = {
+            fileStorage: {value: (config.fileStorage !== false), type: 'bool'},
+            publicAPI: labsFlag('publicAPI'),
+            apps: {value: (config.apps === true), type: 'bool'},
+            version: {value: config.ghostVersion, type: 'string'},
+            environment: process.env.NODE_ENV,
+            database: config.database.client,
+            mail: _.isObject(config.mail) ? config.mail.transport : '',
+            blogUrl: {value: config.url.replace(/\/$/, ''), type: 'string'},
+            blogTitle: {value: config.theme.title, type: 'string'},
+            routeKeywords: {value: JSON.stringify(config.routeKeywords), type: 'json'}
+        };
+
+    return validKeys;
+}
+
+
 function getAboutConfig() {
     return {
         version: config.ghostVersion,
