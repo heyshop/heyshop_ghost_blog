@@ -577,6 +577,31 @@ body.nav-opened .site-wrapper {
     background-position: center;
 }
 
+/* Alignments */
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
 /* ==========================================================================
    4. General - The main styles for the the theme
    ========================================================================== */
@@ -1022,7 +1047,7 @@ body.nav-opened .nav {
 
 body:not(.post-template) .post-title,
 body:not(.page-template) .post-title {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
 }
 
 .post-title a {
@@ -1033,6 +1058,15 @@ body:not(.page-template) .post-title {
     margin: 0;
     font-size: 0.9em;
     line-height: 1.7em;
+    height: 6.8em;
+    overflow: hidden;
+}
+
+.post-image__alt {
+    width: 38.20%;
+    padding-top: 28.65%;
+    float: left;
+    margin-right: 2em;
 }
 
 .read-more {
@@ -1798,6 +1832,19 @@ body:not(.page-template) .post-title {
         font-size: 2.4rem;
     }
 
+    .post-excerpt p {
+        font-size: 1em;
+        height: auto;
+    }
+
+    .post-image__alt {
+        width: auto;
+        padding-top: 50%;
+        float: none;
+        margin-right: 0;
+        margin-bottom: 1.5em;
+    }
+
     hr {
         margin: 2.4em 0;
     }
@@ -2021,10 +2068,6 @@ body:not(.page-template) .post-title {
 
     .page-title {
         font-size: 3rem;
-    }
-
-    .post-excerpt p {
-        font-size: 0.85em;
     }
 
     .page-description {
