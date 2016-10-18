@@ -184,15 +184,19 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: "Merriweather", serif;
-    letter-spacing: 0.01rem;
-    font-size: 1.8rem;
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Source Han Sans',
+                 'Noto Sans CJK Sc', 'Microsoft YaHei', 'Microsoft Jhenghei',
+                 'Avenir', 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1.6rem;
     line-height: 1.75em;
-    color: #3A4145;
+    color: #424b50;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: 'kern' 1;
     -moz-font-feature-settings: 'kern' 1;
     -o-font-feature-settings: 'kern' 1;
     text-rendering: geometricPrecision;
+    font-weight: 300;
 }
 
 ::-moz-selection {
@@ -209,38 +213,36 @@ h4, h5, h6 {
     -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     color: #2E2E2E;
-    line-height: 1.15em;
-    margin: 0 0 0.4em 0;
-    font-family: "Open Sans", sans-serif;
+    line-height: 1.4em;
+    margin: 0 0 0.6em 0;
+    font-family: inherit;
     text-rendering: geometricPrecision;
+    font-weight: 400;
 }
 
 h1 {
-    font-size: 5rem;
-    letter-spacing: -2px;
-    text-indent: -3px;
+    font-size: 3rem;
+    /*text-indent: -3px;*/
 }
 
 h2 {
-    font-size: 3.6rem;
-    letter-spacing: -1px;
+    font-size: 2.4rem;
 }
 
 h3 {
-    font-size: 3rem;
-    letter-spacing: -0.6px;
+    font-size: 2rem;
 }
 
 h4 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
 }
 
 h5 {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 h6 {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 a {
@@ -447,7 +449,7 @@ textarea, select, input {
     padding: 6px 9px;
     margin: 0 0 5px 0;
     outline: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: inherit;
     font-size: 1.6rem;
     font-weight: 100;
     line-height: 1.4em;
@@ -501,7 +503,7 @@ button {
     outline: none;
     text-decoration: none;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: inherit;
     font-size: 11px; /* Hacks targeting Firefox. */
     line-height: 13px; /* Hacks targeting Firefox. */
     font-weight: 300;
@@ -568,6 +570,12 @@ body.nav-opened .site-wrapper {
             transition: transform 0.3s ease;
 }
 
+/* Images */
+.img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /* ==========================================================================
    4. General - The main styles for the the theme
@@ -578,7 +586,7 @@ body.nav-opened .site-wrapper {
     position: relative;
     display: table;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     margin-bottom: 5rem;
     text-align: center;
     background: #222 no-repeat center center;
@@ -598,7 +606,7 @@ body.nav-opened .site-wrapper {
 
 .main-nav a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: inherit;
 }
 
 /* Navigation */
@@ -773,7 +781,7 @@ body.nav-opened .nav {
     color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
     text-align: center;
     font-size: 12px;
-    font-family: "Open Sans", sans-serif;
+    font-family: inherit;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 35px;
@@ -943,9 +951,7 @@ body.nav-opened .nav {
 .page-title {
     margin: 10px 0 10px 0;
     font-size: 5rem;
-    letter-spacing: -1px;
-    font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: inherit;
     color: #fff;
 }
 
@@ -953,8 +959,7 @@ body.nav-opened .nav {
     margin: 0;
     font-size: 2rem;
     line-height: 1.5em;
-    font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: inherit;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
@@ -1017,7 +1022,7 @@ body.nav-opened .nav {
 
 body:not(.post-template) .post-title,
 body:not(.page-template) .post-title {
-    font-size: 3.6rem;
+    font-size: 2.8rem;
 }
 
 .post-title a {
@@ -1037,7 +1042,7 @@ body:not(.page-template) .post-title {
 .post-meta {
     display: block;
     margin: 1.75rem 0 0 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: inherit;
     font-size: 1.5rem;
     line-height: 2.2rem;
     color: #9EABB3;
@@ -1393,7 +1398,7 @@ body:not(.page-template) .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "Merriweather", serif;
+    font-family: inherit;
     letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
@@ -1479,7 +1484,7 @@ body:not(.page-template) .post-title {
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: inherit;
     color: rgba(255,255,255,0.8);
     border: rgba(255,255,255,0.5) 1px solid;
     border-radius: 4px;
@@ -1571,7 +1576,7 @@ body:not(.page-template) .post-title {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
+    font-family: inherit;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -1700,7 +1705,7 @@ body:not(.page-template) .post-title {
 }
 
 .gh-subscribe-rss {
-    font-family: 'Open Sans', sans-serif;
+    font-family: inherit;
     font-size: 1.2rem;
     line-height: 1.4em;
 }
@@ -1713,7 +1718,7 @@ body:not(.page-template) .post-title {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
+    font-family: inherit;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
@@ -1777,7 +1782,6 @@ body:not(.page-template) .post-title {
 
     .page-title {
         font-size: 4rem;
-        letter-spacing: -1px;
     }
 
     .page-description {
@@ -1791,7 +1795,7 @@ body:not(.page-template) .post-title {
 
     body:not(.post-template) .post-title,
     body:not(.page-template) .post-title {
-        font-size: 3.2rem;
+        font-size: 2.4rem;
     }
 
     hr {
@@ -2029,17 +2033,15 @@ body:not(.page-template) .post-title {
 
     h1, h2, h3,
     h4, h5, h6 {
-        margin: 0 0 0.3em 0;
+        margin: 0 0 0.4em 0;
     }
 
     h1 {
         font-size: 2.8rem;
-        letter-spacing: -1px;
     }
 
     h2 {
         font-size: 2.4rem;
-        letter-spacing: 0;
     }
 
     h3 {
@@ -2060,7 +2062,7 @@ body:not(.page-template) .post-title {
 
     body:not(.post-template) .post-title,
     body:not(.page-template) .post-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .post-template .site-footer,
