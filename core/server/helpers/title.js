@@ -7,7 +7,7 @@ var hbs             = require('express-hbs'),
     title;
 
 title = function () {
-    return new hbs.handlebars.SafeString(hbs.handlebars.Utils.escapeExpression(this.title || ''));
+    return new hbs.handlebars.SafeString(pangu.spacing(hbs.handlebars.Utils.escapeExpression(this.title || '')));
 };
 
 module.exports = title;

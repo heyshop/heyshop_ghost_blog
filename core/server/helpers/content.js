@@ -18,21 +18,20 @@ content = function (options) {
     _.keys(truncateOptions).map(function (key) {
         truncateOptions[key] = parseInt(truncateOptions[key], 10);
     });
-
     if (truncateOptions.hasOwnProperty('words') || truncateOptions.hasOwnProperty('characters')) {
         // Legacy function: {{content words="0"}} should return leading tags.
         if (truncateOptions.hasOwnProperty('words') && truncateOptions.words === 0) {
             return new hbs.handlebars.SafeString(
-                downzero(this.html)
+                downzero(pangu.spacing(this.html))
             );
         }
 
         return new hbs.handlebars.SafeString(
-            downsize(this.html, truncateOptions)
+            downsize(pangu.spacing(this.html), truncateOptions)
         );
     }
 
-    return new hbs.handlebars.SafeString(this.html);
+    return new hbs.handlebars.SafeString(pangu.spacing(this.html));
 };
 
 module.exports = content;

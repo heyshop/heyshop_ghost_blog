@@ -18,7 +18,7 @@ function excerpt(options) {
     });
 
     return new hbs.handlebars.SafeString(
-        getMetaDataExcerpt(String(this.html), truncateOptions)
+        getMetaDataExcerpt(pangu.spacing(String(this.html)), truncateOptions)
     );
 }
 
